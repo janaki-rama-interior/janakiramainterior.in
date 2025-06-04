@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janaki Rama Interior</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif; /* Default font */
+            background-color: #F6F6F6;
+            color: #1f2937; /* Equivalent to text-gray-800 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .font-architects-daughter {
+            font-family: 'Architects Daughter', cursive;
+        }
+
+        /* Animations from React component */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInScale 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+
+        .animate-fade-in-up.delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .animate-fade-in-up.delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        /* Basic styling for initially hidden pages */
+        #residential-designs-page,
+        #commercial-designs-page {
+            display: none;
+        }
+
+        /* Custom message box for form submission */
+        #form-submission-message-box {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: none; /* Hidden by default */
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <header class="bg-white shadow-sm py-4 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center space-x-3 mb-4 md:mb-0">
+            <div>
+                <a href="#home" class="flex items-center nav-link">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 font-architects-daughter">Janaki Rama Interior</h1>
+                </a>
+            </div>
+        </div>
+        <nav class="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6 text-lg font-medium">
+            <a href="#home" class="nav-link flex items-center text-gray-700 transition duration-300 hover:text-[#287094]">
+                <i data-lucide="home" class="mr-1 h-5 w-5"></i> Home
+            </a>
+            <a href="#about" class="nav-link flex items-center text-gray-700 transition duration-300 hover:text-[#287094]">
+                <i data-lucide="users" class="mr-1 h-5 w-5"></i> About Us
+            </a>
+            <a href="#services" class="nav-link flex items-center text-gray-700 transition duration-300 hover:text-[#287094]">
+                <i data-lucide="layout-grid" class="mr-1 h-5 w-5"></i> Services
+            </a>
+            <a href="#contact" class="nav-link flex items-center text-gray-700 transition duration-300 hover:text-[#287094]">
+                <i data-lucide="phone" class="mr-1 h-5 w-5"></i> Contact
+            </a>
+        </nav>
+    </header>
+
+    <div id="main-content">
+        <section id="home" class="relative mx-4 mt-4 flex items-center justify-center overflow-hidden rounded-b-xl bg-gradient-to-br from-[#023246] to-[#287094] py-20 text-center text-white shadow-xl md:py-32">
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://placehold.co/1920x1080/0A2C46/FFFFFF?text=Modern+Interior')"></div>
+            <div class="relative z-10 max-w-4xl px-6">
+                <p class="animate-fade-in-up delay-200 text-lg opacity-90 md:text-xl mb-8">
+                    Bringing your dream interiors to life with stunning realism and precision.
+                </p>
+            </div>
+        </section>
+
+        <section id="about" class="mx-4 mt-8 rounded-xl bg-white px-6 py-16 shadow-lg md:px-12 md:py-24">
+            <div class="mx-auto max-w-6xl text-center">
+                <h3 class="mb-8 text-3xl font-bold text-gray-900 md:text-4xl">About Janaki Rama Interior</h3>
+                <div class="flex flex-col items-center md:flex-row md:space-x-12">
+                    <div class="mb-8 md:mb-0 md:w-1/2">
+                        <img src="https://placehold.co/600x400/E0F2FE/2C5282?text=Our+Team" alt="About Us" class="h-auto w-full rounded-xl object-cover shadow-lg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/E0F2FE/2C5282?text=Placeholder+Image';">
+                    </div>
+                    <div class="text-left md:w-1/2">
+                        <p class="mb-4 text-lg leading-relaxed text-gray-700">
+                            At Janaki Rama Interior, we specialize in creating breathtaking 3D interior designs that not only look stunning but also function perfectly for your lifestyle. With years of experience and a passion for innovation, our team is dedicated to delivering personalized and exceptional design solutions.
+                        </p>
+                        <p class="text-lg leading-relaxed text-gray-700">
+                            We believe that every space has a story, and we are here to help you tell yours. From conceptualization to final visualization, we ensure a seamless and enjoyable design journey, bringing your vision to life with unparalleled precision.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="mx-4 mt-8 rounded-xl bg-[#F6F6F6] px-6 py-16 shadow-lg md:px-12 md:py-24">
+            <div class="mx-auto max-w-6xl text-center">
+                <h3 class="mb-12 text-3xl font-bold text-gray-900 md:text-4xl">Our 3D Design Services</h3>
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div id="residential-card-link" class="transform rounded-xl bg-white p-8 shadow-md transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+                        <div class="mb-4 flex justify-center">
+                            <i data-lucide="layout-grid" class="h-12 w-12 text-[#287094]"></i>
+                        </div>
+                        <h4 class="mb-3 text-xl font-semibold text-gray-900">Residential Design</h4>
+                        <p class="text-gray-600">
+                            Crafting personalized and comfortable living spaces, from cozy apartments to luxurious villas, with detailed 3D renderings that bring your home to life.
+                        </p>
+                    </div>
+                    <div id="commercial-card-link" class="transform rounded-xl bg-white p-8 shadow-md transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+                        <div class="mb-4 flex justify-center">
+                            <i data-lucide="users" class="h-12 w-12 text-[#287094]"></i>
+                        </div>
+                        <h4 class="mb-3 text-xl font-semibold text-gray-900">Commercial Design</h4>
+                        <p class="text-gray-600">
+                            Designing functional and aesthetically pleasing commercial spaces, including offices, retail stores, and restaurants, optimized for productivity and client experience.
+                        </p>
+                    </div>
+                    <div class="transform rounded-xl bg-white p-8 shadow-md transition-shadow duration-300 hover:-translate-y-2 hover:shadow-xl">
+                        <div class="mb-4 flex justify-center">
+                            <i data-lucide="sparkles" class="h-12 w-12 text-[#287094]"></i>
+                        </div>
+                        <h4 class="mb-3 text-xl font-semibold text-gray-900">3D Visualization & Rendering</h4>
+                        <p class="text-gray-600">
+                            Experience your future space before it's built with our hyper-realistic 3D renderings and virtual walkthroughs, ensuring every detail is perfect.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose-us" class="mx-4 mt-8 rounded-xl bg-white px-6 py-16 shadow-lg md:px-12 md:py-24">
+            <div class="mx-auto max-w-6xl text-center">
+                <h3 class="mb-12 text-3xl font-bold text-gray-900 md:text-4xl">Why Choose Janaki Rama Interior?</h3>
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                    <div class="flex flex-col items-center p-6 bg-[#F6F6F6] rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <i data-lucide="lightbulb" class="h-12 w-12 text-[#287094] mb-4"></i>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Expertise & Innovation</h4>
+                        <p class="text-gray-600 text-center">Leveraging cutting-edge 3D tools and creative solutions to bring your vision to life.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-[#F6F6F6] rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <i data-lucide="users" class="h-12 w-12 text-[#287094] mb-4"></i>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Client-Centric Approach</h4>
+                        <p class="text-gray-600 text-center">Your satisfaction is our priority. We listen, collaborate, and deliver designs tailored to your needs.</p>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-[#F6F6F6] rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <i data-lucide="award" class="h-12 w-12 text-[#287094] mb-4"></i>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-2">Quality & Timely Delivery</h4>
+                        <p class="text-gray-600 text-center">Committed to excellence in every detail, ensuring high-quality results delivered on schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="mx-4 mt-8 rounded-xl bg-[#F6F6F6] px-6 py-16 shadow-lg md:px-12 md:py-24">
+            <div class="mx-auto max-w-6xl text-center">
+                <h3 class="mb-12 text-3xl font-bold text-gray-900 md:text-4xl">Thoughtful & Functional</h3>
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="group overflow-hidden rounded-xl bg-white shadow-md">
+                        <img src="https://i.pinimg.com/736x/12/cf/8c/12cf8c592289dbe297affdf5947c3849.jpg" alt="Modern Living Room" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://i.pinimg.com/736x/12/cf/8c/12cf8c592289dbe297affdf5947c3849.jpg';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Modern Living Room</h4>
+                            <p class="text-gray-600">A sleek and minimalist design for a contemporary living space, maximizing light and functionality.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-white shadow-md">
+                        <img src="https://i.pinimg.com/736x/57/33/03/573303746cd79bc5e7f149d8ad16f6c1.jpg" alt="Cozy Bedroom Retreat" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/ADD8E6/000000?text=Project+1';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Cozy Bedroom Retreat</h4>
+                            <p class="text-gray-600">Creating a serene and comfortable bedroom ambiance with soft textures and calming color palettes.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-white shadow-md">
+                        <img src="https://i.pinimg.com/736x/be/27/8d/be278deecb8035a7aa025d0e85a8d16f.jpg" alt="Spacious Kitchen Design" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://i.pinimg.com/736x/be/27/8d/be278deecb8035a7aa025d0e85a8d16f.jpg';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Spacious Kitchen Design</h4>
+                            <p class="text-gray-600">A functional and stylish kitchen perfect for culinary adventures, featuring smart storage and modern finishes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mx-4 mt-8 rounded-xl bg-white px-6 py-16 shadow-lg md:px-12 md:py-24">
+            <div class="mx-auto max-w-4xl text-center">
+                <h3 class="mb-8 text-3xl font-bold text-gray-900 md:text-4xl">Get In Touch</h3>
+                <p class="mb-8 text-lg text-gray-700">
+                    Ready to transform your space? Contact us to schedule a consultation or learn more about our services.
+                </p>
+                <div class="flex flex-col items-center justify-center space-y-6 md:flex-row md:space-x-12 md:space-y-0 mb-8">
+                    <div class="flex items-center space-x-3 text-lg text-gray-800">
+                        <i data-lucide="phone" class="h-6 w-6 text-[#287094]"></i>
+                        <span>+91 9704314310</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-lg text-gray-800">
+                        <i data-lucide="mail" class="h-6 w-6 text-[#287094]"></i>
+                        <span>janakiramainterior@gmail.com</span>
+                    </div>
+                </div>
+                <form class="mt-12 rounded-xl bg-[#F6F6F6] p-8 shadow-md">
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 mb-6">
+                        <div>
+                            <label for="name" class="mb-2 block text-left text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#287094]" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="mb-2 block text-left text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#287094]" placeholder="Your Email">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="phone-input" class="mb-2 block text-left text-sm font-medium text-gray-700">Phone</label>
+                        <input type="tel" id="phone-input" class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#287094]" placeholder="Your Phone Number">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="mb-2 block text-left text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" rows="5" class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#287094]" placeholder="Tell us about your project"></textarea>
+                    </div>
+                    <button type="submit" class="transform rounded-full bg-[#287094] px-8 py-4 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-[#023246]">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div id="residential-designs-page">
+        <section class="mx-4 mt-8 rounded-xl bg-white px-6 py-16 shadow-lg md:px-12 md:py-24">
+            <div class="mx-auto max-w-6xl text-center">
+                <button id="residential-back-button" class="mb-8 flex items-center justify-center rounded-full bg-[#287094] px-6 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-[#023246] mx-auto md:mx-0">
+                    <i data-lucide="arrow-left" class="mr-2 h-5 w-5"></i> Back to Services
+                </button>
+                <h3 class="mb-12 text-3xl font-bold text-gray-900 md:text-4xl">Residential Design Portfolio</h3>
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/4c/c2/e9/4cc2e9e854fec2b1a60d22acd9adc360.jpg" alt="Elegant Living Room" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Elegant Living Room</h4>
+                            <p class="text-gray-600">A spacious and modern living room designed for comfort and style, featuring a minimalist aesthetic with warm lighting and bespoke furniture.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/c1/ec/0e/c1ec0e01b2b6cff0e99625458f1644bd.jpg" alt="Chic Dining Area" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Chic Dining Area</h4>
+                            <p class="text-gray-600">An inviting dining space perfect for family gatherings, with a focus on natural light, a contemporary dining set, and artistic decor.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/1f/29/41/1f2941d9329135be853a54d081325612.jpg" alt="Modern TV Unit & Entertainment" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Modern TV Unit & Entertainment</h4>
+                            <p class="text-gray-600">A sleek and functional TV unit integrated into the living space, providing ample storage, hidden wiring, and a clean, sophisticated look.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/b2/d8/f3/b2d8f373d606bce1938c496fa6477ed6.jpg" alt="Productive Workstation" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Productive Workstation</h4>
+                            <p class="text-gray-600">An ergonomic and inspiring home office setup, designed to maximize productivity and minimize clutter with smart storage solutions and ambient lighting.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/b5/3c/5f/b53c5f421b296838ae34b489f8eeaf4a.jpg" alt="Serene Bedroom Retreat" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Serene Bedroom Retreat</h4>
+                            <p class="text-gray-600">A calming and luxurious bedroom designed for ultimate relaxation, featuring soft textures, ambient lighting, and custom-built storage.</p>
+                        </div>
+                    </div>
+                     <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/6d/98/5b/6d985ba2edaf8c34be47f1f42561e386.jpg" alt="Spa-like Bathroom" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Spa-like Bathroom</h4>
+                            <p class="text-gray-600">A modern bathroom with a spa-like feel, incorporating natural elements, smart storage solutions, and luxurious fixtures for a refreshing experience.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/be/46/a9/be46a9d2e7ed1668d1c9bb5473de899f.jpg" alt="Vibrant Kids Room" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Vibrant Kids Room</h4>
+                            <p class="text-gray-600">A playful and safe children's room, designed with bright colors, creative storage, and interactive elements to inspire imagination.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/94/07/37/94073763d438a5418225385c1de26297.jpg" alt="Functional Kitchen Design" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Functional Kitchen Design</h4>
+                            <p class="text-gray-600">A highly functional and aesthetically pleasing kitchen, optimized for cooking and entertaining with smart appliances and ample counter space.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/53/98/ef/5398ef855cfed83f2102926cf60f1c0e.jpg" alt="Inviting Entryway" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Inviting Entryway</h4>
+                            <p class="text-gray-600">A welcoming and organized entryway, providing a great first impression with smart storage, seating, and decorative elements.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="commercial-designs-page">
+        <section class="mx-4 mt-8 rounded-xl bg-white px-6 py-16 shadow-lg md:px-12 md:py-24">
+            <div class="mx-auto max-w-6xl text-center">
+                <button id="commercial-back-button" class="mb-8 flex items-center justify-center rounded-full bg-[#287094] px-6 py-3 text-lg font-semibold text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-[#023246] mx-auto md:mx-0">
+                    <i data-lucide="arrow-left" class="mr-2 h-5 w-5"></i> Back to Services
+                </button>
+                <h3 class="mb-12 text-3xl font-bold text-gray-900 md:text-4xl">Commercial Design Portfolio</h3>
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/27/f2/42/27f242ee07b4ffe00600b57f3ae97b3e.jpg" alt="Office Spaces" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Office Spaces</h4>
+                            <p class="text-gray-600">Innovative and functional office designs that boost productivity and reflect your brand identity.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/ff/99/b8/ff99b864b60da6f3bf614493f8789e3a.jpg" alt="Retail Environments" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Retail Environments</h4>
+                            <p class="text-gray-600">Captivating retail designs that enhance customer experience and drive sales through engaging layouts.</p>
+                        </div>
+                    </div>
+                    <div class="group overflow-hidden rounded-xl bg-[#F6F6F6] shadow-md">
+                        <img src="https://i.pinimg.com/736x/a6/60/90/a6609008fc482bd4ac460f5282e7044e.jpg" alt="Hospitality Design" class="h-64 w-full transform object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/CCCCCC/333333?text=Image+Error';">
+                        <div class="p-6">
+                            <h4 class="mb-2 text-xl font-semibold text-gray-900">Hospitality Design</h4>
+                            <p class="text-gray-600">Luxurious and welcoming hospitality spaces, including hotels, restaurants, and cafes, designed for memorable guest experiences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="mx-4 mt-8 rounded-t-xl bg-[#023246] px-6 py-8 text-white md:px-12">
+        <div class="mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl text-center md:text-left">
+            <div>
+                <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="nav-link text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#about" class="nav-link text-gray-400 hover:text-white transition duration-300">About</a></li>
+                    <li><a href="#services" class="nav-link text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link text-gray-400 hover:text-white transition duration-300">Projects</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" id="footer-residential-link" class="text-gray-400 hover:text-white transition duration-300">Residential Design</a></li>
+                    <li><a href="#" id="footer-commercial-link" class="text-gray-400 hover:text-white transition duration-300">Commercial Design</a></li>
+                    <li><a href="#services" class="nav-link text-gray-400 hover:text-white transition duration-300">3D Visualization</a></li>
+                    <li><a href="#services" class="nav-link text-gray-400 hover:text-white transition duration-300">Space Planning</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Contact</h4>
+                <div class="space-y-3">
+                    <a href="https://www.google.com/maps/search/?api=1&query=179,+behind+HARBOR+INTERNATIONAL+SCHOOL+BODDAPALAM,+YSR+COLONY,+ANANDAPURAM,+Visakhapatnam,+Andhra+Pradesh+531163" target="_blank" rel="noopener noreferrer" class="flex items-start md:items-center space-x-2 text-gray-400 hover:text-white transition duration-300 group">
+                        <i data-lucide="map-pin" class="h-5 w-5 flex-shrink-0 group-hover:text-white"></i>
+                        <span>179, behind HARBOR INTERNATIONAL SCHOOL BODDAPALAM, YSR COLONY, ANANDAPURAM, Visakhapatnam, Andhra Pradesh 531163</span>
+                    </a>
+                    <div class="flex items-center space-x-2 text-gray-400">
+                        <i data-lucide="phone" class="h-5 w-5"></i>
+                        <span>(+91) 9704314310</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-400">
+                        <i data-lucide="mail" class="h-5 w-5"></i>
+                        <span>janakiramainterior@gmail.com</span>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex items-center space-x-2 text-gray-400">
+                            <i data-lucide="clock" class="h-5 w-5"></i>
+                            <span>Business Hours:</span>
+                        </div>
+                        <ul class="ml-7 text-gray-400">
+                            <li>Monday - Friday: 10 AM to 4 PM</li>
+                            <li>Saturday: 10 AM to 4 PM</li>
+                            <li>Sunday: Closed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="bg-gradient-to-r from-[#023246] to-[#287094] p-2 rounded-full shadow-lg">
+                    <i data-lucide="sparkles" class="h-8 w-8 text-white"></i>
+                </div>
+                <span class="text-xl md:text-2xl font-bold text-white font-architects-daughter">Janaki Rama Interior</span>
+            </div>
+        </div>
+        <div class="text-center text-gray-400 text-sm">
+            <p>© 2025 Janaki Rama Interior. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-2">
+                <a href="#" class="hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="form-submission-message-box">Message Sent (Simulated)!</div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Page elements
+            const mainContent = document.getElementById('main-content');
+            const residentialPage = document.getElementById('residential-designs-page');
+            const commercialPage = document.getElementById('commercial-designs-page');
+            const allPageDivs = [mainContent, residentialPage, commercialPage];
+
+            // Function to show a page and hide others
+            function showPageContent(pageElementToShow, sectionId = null) {
+                allPageDivs.forEach(page => {
+                    if (page) page.style.display = 'none';
+                });
+
+                if (pageElementToShow) {
+                    pageElementToShow.style.display = 'block';
+                    // Scroll to top of the new page content
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    // If it's the main content and a sectionId is provided, scroll to that section
+                    if (pageElementToShow === mainContent && sectionId) {
+                        setTimeout(() => { // Timeout to ensure display:block is processed
+                            const element = document.getElementById(sectionId);
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            } else if (sectionId === 'home') { // Default to top if #home
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }
+                        }, 50); // Small delay
+                    }
+                }
+            }
+
+            // Attach event listeners to navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const sectionId = href.substring(1);
+                        // For #home, #about, #services, #portfolio, #contact, #why-choose-us
+                        if (['home', 'about', 'services', 'portfolio', 'contact', 'why-choose-us'].includes(sectionId)) {
+                           showPageContent(mainContent, sectionId);
+                        } else if (href === '#') { // Generic # link, treat as home
+                           showPageContent(mainContent, 'home');
+                        }
+                    } else if (href === '/') { // For logo link or explicit home
+                        e.preventDefault();
+                        showPageContent(mainContent, 'home');
+                    }
+                    // Other types of links will behave normally
+                });
+            });
+
+            // Service Card Clicks
+            const residentialCardLink = document.getElementById('residential-card-link');
+            if (residentialCardLink) {
+                residentialCardLink.addEventListener('click', () => showPageContent(residentialPage));
+            }
+
+            const commercialCardLink = document.getElementById('commercial-card-link');
+            if (commercialCardLink) {
+                commercialCardLink.addEventListener('click', () => showPageContent(commercialPage));
+            }
+
+            // Footer Service Links
+            const footerResidentialLink = document.getElementById('footer-residential-link');
+            if (footerResidentialLink) {
+                footerResidentialLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPageContent(residentialPage);
+                });
+            }
+
+            const footerCommercialLink = document.getElementById('footer-commercial-link');
+            if (footerCommercialLink) {
+                footerCommercialLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPageContent(commercialPage);
+                });
+            }
+
+            // Back Buttons
+            const residentialBackButton = document.getElementById('residential-back-button');
+            if (residentialBackButton) {
+                residentialBackButton.addEventListener('click', () => showPageContent(mainContent, 'services'));
+            }
+
+            const commercialBackButton = document.getElementById('commercial-back-button');
+            if (commercialBackButton) {
+                commercialBackButton.addEventListener('click', () => showPageContent(mainContent, 'services'));
+            }
+
+            // Contact Form Submission (Simulated)
+            const contactForm = document.querySelector('#contact form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const messageBox = document.getElementById('form-submission-message-box');
+                    if (messageBox) {
+                        messageBox.style.display = 'block';
+                        setTimeout(() => {
+                            messageBox.style.display = 'none';
+                        }, 3000);
+                    }
+                    // Optionally, reset the form
+                    // this.reset(); 
+                });
+            }
+
+            // Show main content by default on page load
+            showPageContent(mainContent, 'home');
+        });
+    </script>
+
+</body>
+
